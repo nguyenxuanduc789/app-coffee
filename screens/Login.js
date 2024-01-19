@@ -1,4 +1,4 @@
-import { ToastAndroid, View, Text, Image, Pressable, TextInput, TouchableOpacity } from 'react-native';
+import {  View, Text, Image, Pressable, TextInput, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react'
 import { SafeAreaView } from "react-native-safe-area-context";
 import COLORS from '../constants/colors';
@@ -17,7 +17,7 @@ const Login = ({ navigation }) => {
 
     const handleLogin = async () => {
         try {
-          const response = await axios.post('http://192.168.1.13:3000/api/login', {
+          const response = await axios.post('http://192.168.1.16:3000/api/login', {
             username: username,
             password: password,
           });
@@ -29,22 +29,22 @@ const Login = ({ navigation }) => {
             } else {
                 const { age, gender } = responseData;
               if (response.data.message === 'thanh cong 1') {
-                ToastAndroid.showWithGravity(
-                  `Welcome ${username} to the coffee `,
-                  ToastAndroid.SHORT,
-                  ToastAndroid.CENTER
-                );
+                // ToastAndroid.showWithGravity(
+                //   `Welcome ${username} to the coffee `,
+                //   ToastAndroid.SHORT,
+                //   ToastAndroid.CENTER
+                // );
                 console.log(age,gender)
                 await AsyncStorage.setItem('Age', age.toString());
                 await AsyncStorage.setItem('Gender', gender);
                 navigation.navigate('Sidebar');
                 await AsyncStorage.setItem('Username', username);
               } else {
-                ToastAndroid.showWithGravity(
-                  `Welcome ${username} to the coffee `,
-                  ToastAndroid.SHORT,
-                  ToastAndroid.CENTER
-                );
+                // ToastAndroid.showWithGravity(
+                //   `Welcome ${username} to the coffee `,
+                //   ToastAndroid.SHORT,
+                //   ToastAndroid.CENTER
+                // );
                 navigation.navigate('Sidebarad');
                 await AsyncStorage.setItem('Username', username);
               }
@@ -53,11 +53,11 @@ const Login = ({ navigation }) => {
             console.log('Unexpected status code:', response.status);
           }
         } catch (error) {
-          ToastAndroid.showWithGravity(
-            'You entered the wrong account or password',
-            ToastAndroid.SHORT,
-            ToastAndroid.CENTER
-          );
+        //   ToastAndroid.showWithGravity(
+        //     'You entered the wrong account or password',
+        //     ToastAndroid.SHORT,
+        //     ToastAndroid.CENTER
+        console.log(error);
         }
       };
       

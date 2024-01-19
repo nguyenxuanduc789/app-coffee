@@ -1,2 +1,2 @@
 // secrets.js
-export const GOOGLE_MAPS_API_KEY = 'AIzaSyCZOEpCosDbknqmxR26aJ5V1JgmX_HsYjA';
+export const GOOGLE_MAPS_API_KEY = 'AIzaSyB7Emz4-wL0gZTaXeqTb1tSSCBaMcwW6L8';

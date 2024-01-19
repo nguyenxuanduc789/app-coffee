@@ -28,23 +28,24 @@ const HomeScreen = ({}) => {
   const [coffees, setCoffees] = useState([]);
   useEffect(() => {
     // Make an API request to fetch coffee data
-    const apiUrl = "http://192.168.1.12:3000/products/"; // Replace with your API endpoint
-    fetch(apiUrl)
+    const apiUrl = "http://192.168.1.16:3000/products/"; 
+    fetch(apiUrl, { timeout: 15000 }) // Timeout sau 15 giây
       .then((response) => {
         if (!response.ok) {
-          console.error(`API call error: ${response.status} - ${response.statusText}`);
+         
           throw new Error("Network response was not ok");
         }
         return response.json();
       })
       .then((data) => {
         // Set the retrieved coffee data in the state
+       // Log API response data
         setCoffees(data);
       })
       .catch((error) => {
         console.error("API call error:", error);
       });
-  }, []);
+  }, []);  
   return (
     <SafeAreaView style={styles.container}>
       <Image

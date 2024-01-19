@@ -8,8 +8,8 @@ import Sidebarad from "./screens/Sidebarad/sidebarad";
 import Categories from "./screens/Sidebar/screens/Categories";
 import GetPremium from "./screens/Sidebar/screens/GetPremium"
 import Timer from "./screens/Sidebar/screens/Timer"
+import MapScreen from "./screens/Googlemap/MapScreen"
 const Stack = createNativeStackNavigator();
-
 export default function App() {
   return (
     <NavigationContainer>
@@ -73,6 +73,13 @@ export default function App() {
         <Stack.Screen
           name="Timer"
           component={Timer}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="MapScreen"
+          component={MapScreen}
           options={{
             headerShown: false,
           }}

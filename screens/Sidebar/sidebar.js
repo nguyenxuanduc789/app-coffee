@@ -23,6 +23,7 @@ import Timer from "../Sidebar/screens/Timer";
 import React,{useState, useEffect} from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CoffeeDetailsScreen from "../Home/CoffeeDetailsScreen";
+import MapScreen from "../Googlemap/MapScreen";
 const Drawer = createDrawerNavigator();
 
 export default function Sidebar({navigation}) {
@@ -212,12 +213,12 @@ export default function Sidebar({navigation}) {
           name="Contact"
           options={{
             drawerLabel: "Contact",
-            title: "Contact2",
+            title: "Map",
             drawerIcon: () => (
               <MaterialCommunityIcons name="message-alert-outline" size={20} color="#808080" />
             )
           }}
-          component={Contact}
+          component={MapScreen}
         />
       </Drawer.Navigator>
   );

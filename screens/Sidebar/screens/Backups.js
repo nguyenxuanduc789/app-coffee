@@ -8,7 +8,7 @@ export default function Backups() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('http://192.168.1.12:3003/comments'); // Replace with your API endpoint
+        const response = await fetch('http://192.168.1.12:3003/comments'); 
         const data = await response.json();
         setReviews(data);
       } catch (error) {
