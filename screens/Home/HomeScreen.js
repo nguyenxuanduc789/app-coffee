@@ -28,7 +28,7 @@ const HomeScreen = ({}) => {
   const [coffees, setCoffees] = useState([]);
   useEffect(() => {
     // Make an API request to fetch coffee data
-    const apiUrl = "http://192.168.1.16:3000/products/"; 
+    const apiUrl = "http://172.16.0.230:3000/products/"; 
     fetch(apiUrl, { timeout: 15000 }) // Timeout sau 15 giây
       .then((response) => {
         if (!response.ok) {

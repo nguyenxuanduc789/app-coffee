@@ -22,6 +22,7 @@ import Settings from "../Sidebarad/screens/Settings";
 import Timer from "../Sidebarad/screens/Timer";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React,{useState, useEffect} from "react";
+import MapScreen from "../Googlemap copy/MapScreen";
 const Drawer = createDrawerNavigator();
 
 export default function Sidebarad() {
@@ -126,21 +127,21 @@ export default function Sidebarad() {
           component={Categories}
         />
         <Drawer.Screen
-          name="Customize"
+          name="MapScreen"
           options={{
-            drawerLabel: "Customize",
-            title: "Customize",
+            drawerLabel: "MapScreen",
+            title: "MapScreen",
             drawerIcon: () => (
               <MaterialIcons name="dashboard-customize" size={20} color="#808080" />
             )
           }}
-          component={Customize}
+          component={MapScreen}
         />
         <Drawer.Screen
-          name="Settings"
+          name="ADD PRODUCT"
           options={{
-            drawerLabel: "Settings",
-            title: "Settings",
+            drawerLabel: "ADD PRODUCT",
+            title: "ADD PRODUCT",
             drawerIcon: () => (
               <SimpleLineIcons name="settings" size={20} color="#808080" />
             )
@@ -159,7 +160,6 @@ export default function Sidebarad() {
           }}
           component={Backups}
         />
-
         <Drawer.Screen
           name="Get Premium"
           options={{

@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     // Define the URL of your API
-    const apiUrl = 'http://192.168.1.12:3000/order/';
+    const apiUrl = 'http://172.16.0.230:3000/order/';
     fetchData(apiUrl); // Create a function to fetch data and call it
   }, []);
 
@@ -56,7 +56,7 @@ const Home = () => {
     const updatedValue = !item.broughtout;
 
     try {
-      const response = await fetch(`http://192.168.1.12:3000/order/checkpayment1/${item._id}`, {
+      const response = await fetch(`http://172.16.0.230:3000/order/checkpayment1/${item._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
